@@ -5,17 +5,38 @@
     xmlns:local="using:test3"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lvc="using:LiveCharts.Uwp"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Viewbox>
-            <StackPanel HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center">
-                <TextBlock x:Name="Title" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="ADXL345 Accelerometer Data" VerticalAlignment="Top" Height="67" Width="640" FontSize="48" TextAlignment="Center"/>
-                <TextBlock x:Name="Text_X_Axis" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="X Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="26.667" Foreground="#FFC71818" TextAlignment="Center"/>
-                <TextBlock x:Name="Text_Y_Axis" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Y Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="26.667" Foreground="#FF14D125" TextAlignment="Center"/>
-                <TextBlock x:Name="Text_Z_Axis" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Z Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="26.667" Foreground="#FF1352C1" TextAlignment="Center"/>
-                <TextBlock x:Name="Text_Status" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Status: Initializing ..." VerticalAlignment="Top" Width="1004" FontSize="32" TextAlignment="Center"/>
-            </StackPanel>
-        </Viewbox>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0"  Text="Accelerometer Data" VerticalAlignment="Center" FontSize="16" Foreground="Black" TextAlignment="Center" Grid.RowSpan="1"/>
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center">
+            <TextBlock x:Name="Text_X_Axis" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="X Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="16" Foreground="#FFC71818" TextAlignment="Center"/>
+            <TextBlock x:Name="Text_Y_Axis" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="Y Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="16" Foreground="#FF14D125" TextAlignment="Center"/>
+            <TextBlock x:Name="Text_Z_Axis" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="Z Axis: Not Initialized" VerticalAlignment="Top" Width="312" FontSize="16" Foreground="#FF1352C1" TextAlignment="Center"/>
+            <TextBlock x:Name="Text_Status" HorizontalAlignment="Left" Margin="0,10,0,0" TextWrapping="Wrap" Text="Status: Initializing ..." VerticalAlignment="Top" Width="1004" FontSize="16" TextAlignment="Center"/>
+        </StackPanel>
+        <lvc:CartesianChart x:Name="___mychart_" Grid.Column="0" Grid.Row="1" DisableAnimations="True" Margin="30,0,0,0">
+            <lvc:CartesianChart.Series>
+                <lvc:LineSeries Fill="Transparent" Values="{Binding xValues}" LineSmoothness="0" StrokeThickness="1" PointGeometrySize="0" Stroke="#FFC71818" Title="X Axis" />
+                <lvc:LineSeries Fill="Transparent" Values="{Binding yValues}" LineSmoothness="0" StrokeThickness="1" PointGeometrySize="0" Stroke="#FF14D125" Title="Y Axis" />
+                <lvc:LineSeries Fill="Transparent" Values="{Binding zValues}" LineSmoothness="0" StrokeThickness="1" PointGeometrySize="0" Stroke="#FF1352C1" Title="Z Axis" />
+            </lvc:CartesianChart.Series>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis DisableAnimations="True" Title="G's"/>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis DisableAnimations="True" Title="Samples"/>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
     </Grid>
 </Page>

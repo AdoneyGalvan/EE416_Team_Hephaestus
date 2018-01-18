@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+using LiveCharts;
+using LiveCharts.Uwp;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Windows.Devices.Spi;
 using Windows.Devices.Enumeration;
 using System.Threading;
+using Windows.UI.Xaml.Media;
+using LiveCharts.Defaults;
 
 //All Credit given to Mircosoft  
 //The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -43,17 +35,30 @@ namespace test3
         private const byte ACCEL_SPI_RW_BIT = 0x80;         /* Bit used in SPI transactions to indicate read/write  */
         private const byte ACCEL_SPI_MB_BIT = 0x40;         /* Bit used to indicate multi-byte SPI transactions     */
 
+        private double count = 0;
         private SpiDevice SPIAccel;
         private Timer periodicTimer;
+
+        public ChartValues<ObservablePoint> xValues { get; set; }
+        public ChartValues<ObservablePoint> yValues { get; set; }
+        public ChartValues<ObservablePoint> zValues { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
+
             /* Register for the unloaded event so we can clean up upon exit */
             Unloaded += MainPage_Unloaded;
             InitAccel();
+            xValues = new ChartValues<ObservablePoint> { };
+            yValues = new ChartValues<ObservablePoint> { };
+            zValues = new ChartValues<ObservablePoint> { };
+
+
+            //SeriesCollection = new SeriesCollection{ new LineSeries { Values = new ChartValues<double> { } } };
+            DataContext = this;
         }
-           
+          
         public void InitAccel()
         {
             InitSPIAccel();
@@ -118,27 +123,45 @@ namespace test3
         {
             string xText, yText, zText;
             string statusText;
+            double xData, yData, zData;
+
 
             /* Read and format accelerometer data */
             try
             {
                 Acceleration accel = ReadAccel();
                 xText = String.Format("X Axis: {0:F3}G", accel.X);
+                xData = accel.X;
                 yText = String.Format("Y Axis: {0:F3}G", accel.Y);
+                yData = accel.Y;
                 zText = String.Format("Z Axis: {0:F3}G", accel.Z);
+                zData = accel.Z;
                 statusText = "Status: Running";
             }
             catch (Exception ex)
             {
                 xText = "X Axis: Error";
+                xData = 0;
                 yText = "Y Axis: Error";
+                yData = 0;
                 zText = "Z Axis: Error";
+                zData = 0;
                 statusText = "Failed to read from Accelerometer: " + ex.Message;
             }
 
             /* UI updates must be invoked on the UI thread */
             var task = this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
+                if(count > 100)
+                {
+                    xValues.RemoveAt(0);
+                    yValues.RemoveAt(0);
+                    zValues.RemoveAt(0);
+                }
+                xValues.Add(new ObservablePoint(count, xData));
+                yValues.Add(new ObservablePoint(count, yData));
+                zValues.Add(new ObservablePoint(count, zData));
+
                 Text_X_Axis.Text = xText;
                 Text_Y_Axis.Text = yText;
                 Text_Z_Axis.Text = zText;
@@ -183,7 +206,10 @@ namespace test3
             accel.Y = (double)AccelerationRawY / UNITS_PER_G;
             accel.Z = (double)AccelerationRawZ / UNITS_PER_G;
 
+            count++;
             return accel;
         }
     }
 }
+
+

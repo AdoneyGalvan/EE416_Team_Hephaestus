@@ -10,22 +10,22 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>64d4bd4f-998f-4759-b46e-d45709ccb5eb</PackageIdentityName>
     <PackageIdentityPublisher>CN=Aron</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Aron\Source\Repos\test3\test3\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\test3.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\test3.exe">
       <PackagePath>entrypoint\test3.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Aron\.nuget\packages\livecharts\0.8.0\lib\portable-net40+sl5+win8+wp8+wpa81\LiveCharts.dll">
@@ -379,37 +379,37 @@
     <AppxPackagedFile Include="C:\Users\Aron\.nuget\packages\system.xml.xmlserializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\test3.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\test3.xr.xml">
       <PackagePath>test3.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
@@ -430,11 +430,11 @@
     <AppxPackagedFile Include="C:\Users\Aron\.nuget\packages\livecharts.uwp\0.8.0\lib\uap10.0\LiveCharts.Uwp\LiveCharts.Uwp.xr.xml">
       <PackagePath>LiveCharts.Uwp\LiveCharts.Uwp.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Source\Repos\test3\test3\bin\ARM\Debug\Core\test3.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\test3\test3\bin\ARM\Debug\Core\test3.exe">
       <PackagePath>test3.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
