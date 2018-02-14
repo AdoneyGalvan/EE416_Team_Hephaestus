@@ -1,0 +1,7 @@
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\bin\Release\MyAcceleAppSQL.dll.config
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\bin\Release\MyAcceleAppSQL.dll
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\bin\Release\MyAcceleAppSQL.pdb
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\obj\Release\MyAcceleAppSQL.csproj.CoreCompileInputs.cache
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\obj\Release\MyAcceleAppSQL.dll
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\obj\Release\MyAcceleAppSQL.pdb
+C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppSQL\MyAcceleAppSQL\obj\Release\MyAcceleAppSQL.csprojResolveAssemblyReference.cache
