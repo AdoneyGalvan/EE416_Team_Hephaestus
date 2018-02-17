@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DD79086-B519-4D0E-8A73-EABCA26DF9B7}</ProjectGuid>
+    <ProjectGuid>{4846E1A2-DFB6-440B-9568-B8FD12FB66F3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Signal.Analytics</RootNamespace>
-    <AssemblyName>Signal.Analytics</AssemblyName>
+    <RootNamespace>SignalAnalytics</RootNamespace>
+    <AssemblyName>SignalAnalytics</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Signals.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
