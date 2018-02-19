@@ -12,9 +12,14 @@ using MathNet.Numerics;
 using MathNet.Numerics.IntegralTransforms;
 
 
-
 namespace SignalAnalytics
 {
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Class contains:
+    //      Radix2FFT
+    //      RMS analysis
+    //      Frequency axis scaling
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     class SigFunctions
     {
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,15 +28,37 @@ namespace SignalAnalytics
         //        length of samples array
         //Output: none
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        public void FFT(ref double[] signalSamples, int length)
+        public void ComplexFFT(Complex32[] signalSamples, double[] magSamples)
         {
-            Fourier.ForwardReal(signalSamples, length);
+            //Compute FFT
+            Fourier.Radix2Forward(signalSamples, FourierOptions.Default);
 
-            //Normalize FFT Results
-            //for (int i = 0; i < length; i++)
-            //{
-            //    signalSamples[i] = signalSamples[i] / length;
-            //}
+            ComplexMagnitude(magSamples);
+
+            //Returns max value of array
+            double peak = Max(magSamples);
+
+            //Normalizes array
+            for (int i = 0; i < LengthSamples; i++)
+            {
+                magSamples[i] = magSamples[i] / peak;
+            }
+
+
+        }
+
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //Computes magnitude of the complex valued array
+        //Inputs: double type array
+        //Output: none
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        public void ComplexMagnitude(double[] magnitudeArr)
+        {
+            for (int i = 0; i < LengthSamples; i++)
+            {
+                magnitudeArr[i] = Complex32.Abs(ComplexSignalSamples[i]);
+            }
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,13 +69,19 @@ namespace SignalAnalytics
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         public double RMS(double[] signalSamples, int length)
         {
+            //Initialize RMS
             double RMS = 0;
             for (int i = 0; i < length; i++)
             {
+                //            n
+                //RMS = sqrt{(E Xn)/n} 
+                //           i=0
                 RMS += (signalSamples[i] * signalSamples[i]);
             }
 
             RMS = ((double)1 / length) * RMS;
+
+            //Returns RMS value
             return Math.Sqrt(RMS);
         }
 
@@ -80,7 +113,26 @@ namespace SignalAnalytics
             }
         }
 
-        public double[] SignalSamples { get; set; }
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //Returns maximum value of the array
+        //Inputs: array of doubles
+        //Output: double of max value
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        public double Max(double[] arr)
+        {
+            double maxVal = arr[0];
+
+            for (int i = 0; i < LengthSamples - 1; i++)
+            {
+                //Assigns new max value if next in array is greater than prev
+                if (arr[i + 1] > arr[i]) maxVal = arr[i + 1];
+            }
+
+            return maxVal;
+        }
+
+        public Complex32[] ComplexSignalSamples { get; set; }
+        public double[] RealSignalSamples { get; set; }
         public int LengthSamples { get; set; }
         public int SampleFreq { get; set; }
         public int[] indeces;
@@ -93,44 +145,53 @@ namespace SignalAnalytics
     {
         static void Main(string[] args)
         {
+            //Class instantiation
+            SigFunctions Sig = new SigFunctions
+            { 
+                ComplexSignalSamples = new Complex32[16],
+                LengthSamples = 16,
+                SampleFreq = 16,
+                indeces = new int[16]
+            };
+
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            double[] deg = new double[1000];
+
+            double[] deg = new double[16];
             deg[0] = 0;
 
-            double[] samples = new double[1000];
-
-            for (int i = 1; i < 1000; i++)
+            for (int i = 1; i < 16; i++)
             {
-                deg[i] = deg[i - 1] + 0.01;
+                deg[i] = deg[i - 1] + (Math.PI / 2);                   //Degree increment
+                float amp = (float)Math.Sin(deg[i]);        //Sin function (real)
+                float imag = 0;                             //Imag always zero
 
-                samples[i] = Math.Sin(deg[i]);
+                Complex32 cSamples = new Complex32(amp, imag);
+                Sig.ComplexSignalSamples[i] = cSamples;     //Assign new to Sig instance
 
                 //Console.WriteLine(deg[i]);
                 //Console.WriteLine(samples[i]);
                 //Console.Write('\n');
             }
-                //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-                SigFunctions Sig = new SigFunctions
-                {
-                SignalSamples = samples,
-                LengthSamples = 1000,
-                SampleFreq = 1000,
-                indeces = new int[1000]
-                };
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
             Sig.GenerateIndeces(Sig.LengthSamples, Sig.indeces);
-            //Sig.FFT(ref amp, 14);
 
-            double RMS_val = Sig.RMS(samples, Sig.LengthSamples);
+            double[] transformedValues = new double[Sig.LengthSamples];
+            double[] magnitudeValues = new double[Sig.LengthSamples];
 
+
+            //FFT driver
+            Sig.ComplexFFT(Sig.ComplexSignalSamples, transformedValues);
+
+            Sig.ComplexMagnitude(magnitudeValues);
+            double RMS_val = Sig.RMS(magnitudeValues, Sig.LengthSamples);
+
+            Console.WriteLine(RMS_val);
             Console.WriteLine("Press enter to continue...");
             Console.ReadLine();
 
-            Console.WriteLine(RMS_val);
-
-            //foreach (double element in amp) Console.WriteLine(element);
+            foreach (double element in transformedValues) Console.WriteLine(element);
             //Console.WriteLine();
             //foreach (double element in Sig.indeces) Console.WriteLine(element);
 
