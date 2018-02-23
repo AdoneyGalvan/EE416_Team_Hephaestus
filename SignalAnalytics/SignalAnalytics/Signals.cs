@@ -43,8 +43,6 @@ namespace SignalAnalytics
             {
                 magSamples[i] = magSamples[i] / peak;
             }
-
-
         }
 
 
@@ -137,72 +135,4 @@ namespace SignalAnalytics
         public int SampleFreq { get; set; }
         public int[] indeces;
     }
-
-
-    //Test driver for SigFunctions Class
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            //Class instantiation
-            SigFunctions Sig = new SigFunctions
-            { 
-                ComplexSignalSamples = new Complex32[16],
-                LengthSamples = 16,
-                SampleFreq = 16,
-                indeces = new int[16]
-            };
-
-            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-            double[] deg = new double[16];
-            deg[0] = 0;
-
-            for (int i = 1; i < 16; i++)
-            {
-                deg[i] = deg[i - 1] + (Math.PI / 2);                   //Degree increment
-                float amp = (float)Math.Sin(deg[i]);        //Sin function (real)
-                float imag = 0;                             //Imag always zero
-
-                Complex32 cSamples = new Complex32(amp, imag);
-                Sig.ComplexSignalSamples[i] = cSamples;     //Assign new to Sig instance
-
-                //Console.WriteLine(deg[i]);
-                //Console.WriteLine(samples[i]);
-                //Console.Write('\n');
-            }
-            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-            Sig.GenerateIndeces(Sig.LengthSamples, Sig.indeces);
-
-            double[] transformedValues = new double[Sig.LengthSamples];
-            double[] magnitudeValues = new double[Sig.LengthSamples];
-
-
-            //FFT driver
-            Sig.ComplexFFT(Sig.ComplexSignalSamples, transformedValues);
-
-            Sig.ComplexMagnitude(magnitudeValues);
-            double RMS_val = Sig.RMS(magnitudeValues, Sig.LengthSamples);
-
-            Console.WriteLine(RMS_val);
-            Console.WriteLine("Press enter to continue...");
-            Console.ReadLine();
-
-            foreach (double element in transformedValues) Console.WriteLine(element);
-            //Console.WriteLine();
-            //foreach (double element in Sig.indeces) Console.WriteLine(element);
-
-
-
-
-            #if DEBUG
-            Console.WriteLine("Press enter to close...");
-            Console.ReadLine();
-            #endif
-        }
-    }
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
