@@ -10,22 +10,22 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>f486851d-66a8-45d3-894d-2bfbb47a9bb9</PackageIdentityName>
     <PackageIdentityPublisher>CN=Aron</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.exe">
       <PackagePath>entrypoint\MyAcceleAppClient.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Aron\.nuget\packages\microsoft.aspnet.webapi.client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
@@ -532,47 +532,47 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackagesFallback\runtime.win10-arm.microsoft.netcore.universalwindowsplatform\6.0.6\runtimes\win10-arm\lib\uap10.0.15138\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.xr.xml">
       <PackagePath>MyAcceleAppClient.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\MyAcceleAppClient.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\MyAcceleAppClient.exe">
       <PackagePath>MyAcceleAppClient.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

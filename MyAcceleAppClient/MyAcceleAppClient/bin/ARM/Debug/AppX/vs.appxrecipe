@@ -10,7 +10,7 @@
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>f486851d-66a8-45d3-894d-2bfbb47a9bb9</PackageIdentityName>
     <PackageIdentityPublisher>CN=Aron</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\AppX</LayoutDir>
     <RegisteredManifestChecksum>8F117621441207B202BAA54A07BD939E3A8709402DD60CCA367CCCD478ED5106</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>f486851d-66a8-45d3-894d-2bfbb47a9bb9_1.0.0.0_arm__fcj39y6ajd45j</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>f486851d-66a8-45d3-894d-2bfbb47a9bb9_fcj39y6ajd45j!App</RegisteredUserModeAppID>
@@ -28,16 +28,16 @@
     <JitOptimizationSuppressed>False</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-10T04:22:11.140</Modified>
+      <Modified>2018-02-22T06:17:14.818</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.exe">
       <PackagePath>entrypoint\MyAcceleAppClient.exe</PackagePath>
-      <Modified>2018-02-10T04:22:10.110</Modified>
+      <Modified>2018-02-22T06:17:13.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Aron\.nuget\packages\microsoft.aspnet.webapi.client\5.2.3\lib\portable-wp8+netcore45+net45+wp81+wpa81\System.Net.Http.Formatting.dll">
       <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
@@ -711,60 +711,60 @@
       <PackagePath>netstandard.dll</PackagePath>
       <Modified>2017-12-22T02:00:22.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-02-09T07:45:47.883</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-01-11T14:55:36.304</Modified>
+      <Modified>2018-02-19T22:10:50.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\MyAcceleAppClient.xr.xml">
       <PackagePath>MyAcceleAppClient.xr.xml</PackagePath>
-      <Modified>2018-02-09T10:11:39.335</Modified>
+      <Modified>2018-02-22T06:16:03.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-09-29T01:28:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-02-10T04:22:10.703</Modified>
+      <Modified>2018-02-22T06:17:14.172</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Aron\Documents\Visual Studio 2017\Projects\MyAcceleApp\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\MyAcceleAppClient.exe">
+    <AppxPackagedFile Include="C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\bin\ARM\Debug\Core\MyAcceleAppClient.exe">
       <PackagePath>MyAcceleAppClient.exe</PackagePath>
-      <Modified>2018-02-10T04:22:11.135</Modified>
+      <Modified>2018-02-22T06:17:14.811</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
