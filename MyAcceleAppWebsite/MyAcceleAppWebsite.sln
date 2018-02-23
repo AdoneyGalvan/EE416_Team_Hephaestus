@@ -5,8 +5,13 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MyAcceleAppWebsite", "MyAcceleAppWebsite\", "{84D52FDF-0DFF-4E1D-8A7B-0B7B27A58941}"
 	ProjectSection(WebsiteProperties) = preProject
+<<<<<<< HEAD
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		ProjectReferences = "{81cd8eaf-0804-44ca-80a3-e8cb9c762665}|MyAcceleAppSQL.dll;"
+=======
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+		ProjectReferences = ""
+>>>>>>> a471122e25c0cbc42054b3f7ad05de44268983ee
 		Debug.AspNetCompiler.VirtualPath = "/localhost_60215"
 		Debug.AspNetCompiler.PhysicalPath = "MyAcceleAppWebsite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_60215\"
@@ -26,8 +31,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MyAcceleAppWebsite", "MyAcc
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAcceleAppSQL", "..\MyAcceleAppSQL\MyAcceleAppSQL\MyAcceleAppSQL.csproj", "{81CD8EAF-0804-44CA-80A3-E8CB9C762665}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,10 +41,6 @@ Global
 		{84D52FDF-0DFF-4E1D-8A7B-0B7B27A58941}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84D52FDF-0DFF-4E1D-8A7B-0B7B27A58941}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{84D52FDF-0DFF-4E1D-8A7B-0B7B27A58941}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{81CD8EAF-0804-44CA-80A3-E8CB9C762665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{81CD8EAF-0804-44CA-80A3-E8CB9C762665}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{81CD8EAF-0804-44CA-80A3-E8CB9C762665}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{81CD8EAF-0804-44CA-80A3-E8CB9C762665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

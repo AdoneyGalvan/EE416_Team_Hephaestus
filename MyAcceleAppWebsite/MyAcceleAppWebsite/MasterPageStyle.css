@@ -57,13 +57,26 @@ header {
     min-height: 80px;
 }
 
-header a{
-    color:gold;
-    text-decoration:none;
-    text-transform:capitalize;
-    font-size:xx-large;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight:500;
+header a {
+    color: gold;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+header a:hover {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 40px;
 }
 
 header ul{
@@ -89,7 +102,7 @@ header li {
     width:15%;
     padding: 0;
     margin: 0;
-    background-color: grey;
+    background-color: black;
     color: gold;
     min-height: 1000px;
 }
@@ -99,7 +112,7 @@ header li {
     width:85%;
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: grey;
     color: gold;
     min-height: 1000px;
 }
@@ -149,13 +162,24 @@ h1 {
     margin-left:40px;
 }
 
+.submitbutton:hover{
+    color: gold;
+    background-color: black;
+    border: none;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
 .gridview {
-    color: black;
-    background-color: grey;
-    border: 5px solid gold;
+    color: gold;
+    background-color: black;
+    border: 1px solid gold;
     margin: 20px 20px 20px 20px;
     padding: 10px 10px 10px 10px;
-    font-size: large;
+    font-size: medium;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 200;
 }
