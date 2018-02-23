@@ -44,7 +44,7 @@ namespace MyAcceleAppClient
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://myacceleappwebserver20180208102152.azurewebsites.net/");
+                client.BaseAddress = new Uri("http://myacceleappwebserver.us-west-2.elasticbeanstalk.com/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 

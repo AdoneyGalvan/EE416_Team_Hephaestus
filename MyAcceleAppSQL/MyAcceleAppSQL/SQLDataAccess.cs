@@ -47,28 +47,6 @@ namespace MyAcceleAppSQL
             return datapoints;
         }
 
-        public List<string> GetDataPointsDates()
-        {
-            string sqlQuery = "SELECT DataPointDateTime FROM DataTable";
-
-            List<string> datapoints = new List<string>();
-
-            using (SqlConnection con = new SqlConnection(connectionstring))
-            using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
-            {
-                con.Open();
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        string temp = Convert.ToDateTime(reader["DataPointDateTime"]).ToString("MM/dd/yyyy hh:mm:ss.fff tt");
-                        datapoints.Add(temp);
-                    }
-                }
-            }
-            return datapoints;
-        }
-
         public List<DataPointModel> GetDataPointsByDate(string startdate, string enddate)
         {
             string sqlQuery = "SELECT * FROM DataTable WHERE DataPointDateTime >= @StartDate AND DataPointDateTime <= @EndDate";

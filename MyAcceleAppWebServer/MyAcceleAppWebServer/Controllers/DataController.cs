@@ -11,7 +11,7 @@ namespace MyAcceleAppWebServer.Controllers
 {
     public class DataController : ApiController
     {
-        SQLDataAccess access = new SQLDataAccess(ConfigurationManager.ConnectionStrings["localDB"].ConnectionString);
+        SQLDataAccess access = new SQLDataAccess(ConfigurationManager.ConnectionStrings["CSQLDB"].ConnectionString);
         // GET: api/Data
         public List<DataPointModel> Get()
         {
@@ -26,6 +26,13 @@ namespace MyAcceleAppWebServer.Controllers
             DataPointModel data = new DataPointModel();
             data = access.GetDataPointByID(id);
             return data;
+        }
+
+        public List<DataPointModel> Get(string startdate, string enddate)
+        {
+            List<DataPointModel> datalist = new List<DataPointModel>();
+            datalist = access.GetDataPointsByDate(startdate,enddate);
+            return datalist;
         }
 
         // POST: api/Data

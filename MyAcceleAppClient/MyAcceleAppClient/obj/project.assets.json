@@ -6936,11 +6936,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aron\\Documents\\Visual Studio 2017\\Projects\\MyAcceleApp\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
+      "projectUniqueName": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
       "projectName": "MyAcceleAppClient",
-      "projectPath": "C:\\Users\\Aron\\Documents\\Visual Studio 2017\\Projects\\MyAcceleApp\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
+      "projectPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
       "packagesPath": "C:\\Users\\Aron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aron\\Documents\\Visual Studio 2017\\Projects\\MyAcceleApp\\MyAcceleAppClient\\MyAcceleAppClient\\obj\\",
+      "outputPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
