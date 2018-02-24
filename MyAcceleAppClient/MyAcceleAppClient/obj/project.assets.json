@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.16299": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -309,6 +318,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -791,6 +809,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-arm-aot": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -1274,6 +1301,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -1756,6 +1792,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x64-aot": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -2239,6 +2284,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -2721,6 +2775,15 @@
       }
     },
     "UAP,Version=v10.0.16299/win10-x86-aot": {
+      "MathNet.Numerics/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.3": {
         "type": "package",
         "dependencies": {
@@ -3205,6 +3268,23 @@
     }
   },
   "libraries": {
+    "MathNet.Numerics/4.2.0": {
+      "sha512": "uwHigVqkYjOLSuoeuWVvwK0Kn43ji5Bd9jz1u7Sg2ykmVEwczLSEYbijWLZ5xwr0mvvdombXUtqOfvPnkJ0FFw==",
+      "type": "package",
+      "path": "mathnet.numerics/4.2.0",
+      "files": [
+        "lib/net40/MathNet.Numerics.dll",
+        "lib/net40/MathNet.Numerics.xml",
+        "lib/net461/MathNet.Numerics.dll",
+        "lib/net461/MathNet.Numerics.xml",
+        "lib/netstandard1.3/MathNet.Numerics.dll",
+        "lib/netstandard1.3/MathNet.Numerics.xml",
+        "lib/netstandard2.0/MathNet.Numerics.dll",
+        "lib/netstandard2.0/MathNet.Numerics.xml",
+        "mathnet.numerics.4.2.0.nupkg.sha512",
+        "mathnet.numerics.nuspec"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.3": {
       "sha512": "3kiI8peSXbXHDDrRuo+QaX0iCEVRe0nvn2dBDRw656uPX32UalbBlSIDUDlJxu05eau4tnuhsikiUuugvvoUoQ==",
       "type": "package",
@@ -6925,6 +7005,7 @@
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
+      "MathNet.Numerics >= 4.2.0",
       "Microsoft.AspNet.WebApi.Client >= 5.2.3",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.6"
     ]
@@ -6936,11 +7017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
+      "projectUniqueName": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
       "projectName": "MyAcceleAppClient",
-      "projectPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
+      "projectPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus\\MyAcceleAppClient\\MyAcceleAppClient\\MyAcceleAppClient.csproj",
       "packagesPath": "C:\\Users\\Aron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus-aron-dev\\MyAcceleAppClient\\MyAcceleAppClient\\obj\\",
+      "outputPath": "C:\\Users\\Aron\\Desktop\\EE416_Team_Hephaestus\\MyAcceleAppClient\\MyAcceleAppClient\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -6967,6 +7048,10 @@
     "frameworks": {
       "uap10.0.16299": {
         "dependencies": {
+          "MathNet.Numerics": {
+            "target": "Package",
+            "version": "[4.2.0, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.3, )"

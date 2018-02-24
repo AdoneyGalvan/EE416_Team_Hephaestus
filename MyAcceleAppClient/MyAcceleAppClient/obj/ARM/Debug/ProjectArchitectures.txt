@@ -1,1 +1,1 @@
-C:\Users\Aron\Desktop\EE416_Team_Hephaestus-aron-dev\MyAcceleAppClient\MyAcceleAppClient\MyAcceleAppClient.csproj;arm
+C:\Users\Aron\Desktop\EE416_Team_Hephaestus\MyAcceleAppClient\MyAcceleAppClient\MyAcceleAppClient.csproj;arm

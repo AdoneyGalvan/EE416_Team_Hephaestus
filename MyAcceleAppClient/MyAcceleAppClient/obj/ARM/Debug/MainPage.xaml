@@ -9,9 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <Button x:ConnectionId='1' Content="Click Me" Height="208" Width="429"                      />
-
-
+            <Button x:ConnectionId='1' Name="Button" Height="500" Width="500" Content="Click"                      />
         </StackPanel>
     </Grid>
 </Page>

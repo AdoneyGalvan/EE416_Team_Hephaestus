@@ -20,24 +20,24 @@ public class WebApiAccess
         client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
     }
 
-    public List<DataPointModel> WebApiGetData()
+    public List<DataPointModel> GetRawData()
     {
         List<DataPointModel> temp = new List<DataPointModel>();
-        HttpResponseMessage response = client.GetAsync("api/Data").Result;
+        HttpResponseMessage response = client.GetAsync("api/RawData").Result;
         return temp = response.Content.ReadAsAsync<List<DataPointModel>>().Result;
     }
 
-    public List<DataPointModel> WebApiGetDataByDates(string startdate, string enddate)
+    public List<DataPointModel> GetRawDataByDates(string startdate, string enddate)
     {
         List<DataPointModel> temp = new List<DataPointModel>();
-        HttpResponseMessage response = client.GetAsync(String.Format("api/Data?startdate={0}&enddate={1}",startdate, enddate)).Result;
+        HttpResponseMessage response = client.GetAsync(String.Format("api/RawData?startdate={0}&enddate={1}",startdate, enddate)).Result;
         return temp = response.Content.ReadAsAsync<List<DataPointModel>>().Result;
     }
 
-    public DataPointModel WebApiGetDataByID(int ID)
+    public DataPointModel GetRawDataByID(int ID)
     {
         DataPointModel temp = new DataPointModel();
-        HttpResponseMessage response = client.GetAsync(String.Format("api/Data?id={0}",ID)).Result;
+        HttpResponseMessage response = client.GetAsync(String.Format("api/RawData?id={0}",ID)).Result;
         return temp = response.Content.ReadAsAsync<DataPointModel>().Result;
     }
 

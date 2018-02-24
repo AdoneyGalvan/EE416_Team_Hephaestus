@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
             List<DataPointModel> pointlist = new List<DataPointModel>();
             string temp;
 
-            pointlist = access.WebApiGetData();
+            pointlist = access.GetRawData();
             foreach (DataPointModel element in pointlist)
             {
                 temp = element.DataPointDateTime.ToString("MM/dd/yyyy hh:mm:ss.fff tt");
@@ -37,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
         List<DataPointModel> pointlist = new List<DataPointModel>();
-        pointlist = access.WebApiGetDataByDates(DropDownList1.SelectedItem.ToString(), DropDownList2.SelectedValue.ToString());
+        pointlist = access.GetRawDataByDates(DropDownList1.SelectedItem.ToString(), DropDownList2.SelectedValue.ToString());
         GridView1.DataSource = pointlist;
         GridView1.DataBind();
     }

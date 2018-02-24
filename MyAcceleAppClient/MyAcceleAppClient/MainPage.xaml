@@ -9,9 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <Button Content="Click Me" Height="208" Width="429" Click="Button_Click" />
-
-
+            <Button Name="Button" Height="500" Width="500" Content="Click" Click="Button_Click" />
         </StackPanel>
     </Grid>
 </Page>
