@@ -36,7 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MathNet.Numerics, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+<<<<<<< HEAD
       <HintPath>..\..\MyAcceleAppClient\packages\MathNet.Numerics.4.2.0\lib\net461\MathNet.Numerics.dll</HintPath>
+=======
+      <HintPath>..\packages\MathNet.Numerics.4.2.0\lib\net461\MathNet.Numerics.dll</HintPath>
+>>>>>>> e85c8092347daa135ee69dc902d40a0c404b82d8
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
