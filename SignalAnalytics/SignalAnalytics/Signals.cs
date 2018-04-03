@@ -1,8 +1,4 @@
-﻿//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//Remove if not debugging, keeps console open
-#define DEBUG
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -127,6 +123,37 @@ namespace SignalAnalytics
             }
 
             return maxVal;
+        }
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //Returns circshift FFT array
+        //Inputs: array of doubles, length of array
+        //Output: none
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        public void FFT_shift(ref double [] arr, int length)
+        {
+            int half = length / 2;
+
+            //create new temp array
+            double[] temp = new double[1024];
+
+            //populate temp array with current values
+            for (int i = 0; i < length; i++)
+            {
+                temp[i] = arr[i];
+            }
+
+            //for first half of the FFT
+            for (int i = 0; i < half; i++)
+            {
+                arr[i] = temp[half + 1];
+            }
+
+            //for last half of the FFT
+            for (int i = half; i < length; i++)
+            {
+                arr[i] = temp[i - half];
+            }
         }
 
         public Complex32[] ComplexSignalSamples { get; set; }
