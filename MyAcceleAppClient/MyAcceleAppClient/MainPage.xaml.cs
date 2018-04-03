@@ -19,7 +19,7 @@ namespace MyAcceleAppClient
     public sealed partial class MainPage : Page
     {
         //FTT Classes/Variables and Settings
-        private const int samplenum = 4096;
+        private const int samplenum = 1024;
         private SigFunctions sig = new SigFunctions();
         private double[] x_axis = new double[samplenum];
         private double[] y_axis = new double[samplenum];
@@ -37,15 +37,14 @@ namespace MyAcceleAppClient
 
         //
         private Timer period = new Timer();
-        private int delaytime = 100;
-        private int globalcount = 0;
+        private const int delaytime = 100;
 
         public MainPage()
         {
             this.InitializeComponent();
-            mysensor.InitializeIC2();
+            //mysensor.InitializeIC2();
             InitializeHttp();
-            InitializeTimer();
+            //InitializeTimer();
         }
 
         private void InitializeHttp()
@@ -60,68 +59,133 @@ namespace MyAcceleAppClient
             period.Interval = delaytime;
             period.AutoReset = true;
             period.Elapsed += GetData;
+            period.Enabled = false;
         }
- 
+        
+        private void Test()
+        {
+            double[] deg = new double[samplenum];
+            float amp;
+
+            for (int i = 0; i < samplenum; i++)
+            {
+                if (i == 0)
+                {
+                    deg[0] = 0;
+                    amp = 0;
+                }
+                else
+                {
+                    deg[i] = deg[i - 1] + (Math.PI / 2);                   //Degree increment
+                    amp = (float)Math.Sin(deg[i]);        //Sin function (real)
+
+                    x_axis[i] = amp;
+                    y_axis[i] = amp;
+                    z_axis[i] = amp;
+                }
+
+                rawdatapointlist[i] = new DataPointModel
+                {
+                    DataPointDateTime = DateTime.Now,
+                    DataPointX = amp,
+                    DataPointY = amp,
+                    DataPointZ = amp,
+                };
+
+                fftdatapointlist[i] = new DataPointModel
+                {
+                    DataPointDateTime = DateTime.Now,
+                    DataPointX = rawdata.X,
+                    DataPointY = rawdata.Y,
+                    DataPointZ = rawdata.Z,
+                };
+            }
+
+            //Perform the FFT on the Time Series Data
+            x_axis = sig.ComplexFFT(x_axis, samplenum);
+            y_axis = sig.ComplexFFT(y_axis, samplenum);
+            z_axis = sig.ComplexFFT(z_axis, samplenum);
+
+            //Send the FFT Data
+            for (int i = 0; i < samplenum; i++)
+            {
+                fftdatapointlist[i].DataPointX = x_axis[i];
+                fftdatapointlist[i].DataPointY = y_axis[i];
+                fftdatapointlist[i].DataPointZ = z_axis[i];
+
+                response = client.PostAsJsonAsync("api/FFTData", fftdatapointlist[i]).Result;
+            }
+
+            for (int i = 0; i < samplenum; i++)
+            {
+                response = client.PostAsJsonAsync("api/RawData", rawdatapointlist[i]).Result;
+            }
+
+        }
+
         private void GetData(Object source, ElapsedEventArgs e)
         {
-            rawdata = mysensor.ReadAccele();
+            //Disable periodic timer
+            period.Enabled = false;
 
-            //Use to perform the signal analysis
-            x_axis[globalcount] = rawdata.X;
-            y_axis[globalcount] = rawdata.Y;
-            z_axis[globalcount] = rawdata.Z;
-
-
-            rawdatapointlist[globalcount] = new DataPointModel {
-                DataPointDateTime = DateTime.Now,
-                DataPointX = rawdata.X,
-                DataPointY = rawdata.Y,
-                DataPointZ = rawdata.Z,
-            };
-
-            //Adding the tempdatapoint to FFT list to ensure that the fft and raw have the same timestamp.
-            //The actual x,y, and z values will be overwritten
-            fftdatapointlist[globalcount] = new DataPointModel
+            for (int i = 0; i < samplenum; i++)
             {
-                DataPointDateTime = DateTime.Now,
-                DataPointX = rawdata.X,
-                DataPointY = rawdata.Y,
-                DataPointZ = rawdata.Z,
-            };
+                //Read from accelerometer
+                rawdata = mysensor.ReadAccele();
 
-            
-            if (globalcount >= samplenum - 1)
-            {
-                globalcount = 0;
-                period.Enabled = false;
+                //Use to perform the signal analysis
+                x_axis[i] = rawdata.X;
+                y_axis[i] = rawdata.Y;
+                z_axis[i] = rawdata.Z;
 
-                x_axis = sig.ComplexFFT(x_axis, samplenum);
-                y_axis = sig.ComplexFFT(x_axis, samplenum);
-                z_axis = sig.ComplexFFT(x_axis, samplenum);
-
-                for (int i = 0; i < samplenum; i++)
+                //Construct new Data Point Model for the time series data
+                rawdatapointlist[i] = new DataPointModel
                 {
-                    fftdatapointlist[i].DataPointX = x_axis[i];
-                    fftdatapointlist[i].DataPointY = y_axis[i];
-                    fftdatapointlist[i].DataPointZ = z_axis[i];
+                    DataPointDateTime = DateTime.Now,
+                    DataPointX = rawdata.X,
+                    DataPointY = rawdata.Y,
+                    DataPointZ = rawdata.Z,
+                };
 
-                    response = client.PostAsJsonAsync("api/FFTData", fftdatapointlist[i]).Result;
-                }
-
-                for (int i = 0; i < samplenum; i++)
+                //Adding the tempdatapoint to FFT list to ensure that the fft and raw have the same timestamp.
+                //The actual x,y, and z values will be overwritten
+                fftdatapointlist[i] = new DataPointModel
                 {
-                    response = client.PostAsJsonAsync("api/RawData", rawdatapointlist[i]).Result;
-                }
-
-                
+                    DataPointDateTime = DateTime.Now,
+                    DataPointX = rawdata.X,
+                    DataPointY = rawdata.Y,
+                    DataPointZ = rawdata.Z,
+                };
             }
-            globalcount++;
-            
+
+            //Perform the FFT on the Time Series Data
+            x_axis = sig.ComplexFFT(x_axis, samplenum);
+            y_axis = sig.ComplexFFT(y_axis, samplenum);
+            z_axis = sig.ComplexFFT(z_axis, samplenum);
+
+            //Send the FFT Data
+            for (int i = 0; i < samplenum; i++)
+            {
+                fftdatapointlist[i].DataPointX = x_axis[i];
+                fftdatapointlist[i].DataPointY = y_axis[i];
+                fftdatapointlist[i].DataPointZ = z_axis[i];
+
+                response = client.PostAsJsonAsync("api/FFTData", fftdatapointlist[i]).Result;
+            }
+
+            for (int i = 0; i < samplenum; i++)
+            {
+                response = client.PostAsJsonAsync("api/RawData", rawdatapointlist[i]).Result;
+            }
+
+            //Re-enble the periodic timer
+            period.Enabled = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            period.Enabled = true;
+            //period.Enabled = true;
+            Test();
         }
 
     }

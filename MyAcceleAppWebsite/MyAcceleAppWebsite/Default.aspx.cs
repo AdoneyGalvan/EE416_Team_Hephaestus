@@ -11,7 +11,7 @@ public partial class _Default : System.Web.UI.Page
 {
     //SQLDataAccess access = new SQLDataAccess(ConfigurationManager.ConnectionStrings["CSQLDB"].ConnectionString);
     WebApiAccess access = new WebApiAccess();
-    
+    int count = 0;
     protected void Page_Load(object sender, EventArgs e)
     {
         if(!IsPostBack)
@@ -37,8 +37,13 @@ public partial class _Default : System.Web.UI.Page
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
         List<DataPointModel> pointlist = new List<DataPointModel>();
-        pointlist = access.GetRawDataByDates(DropDownList1.SelectedItem.ToString(), DropDownList2.SelectedValue.ToString());
-        GridView1.DataSource = pointlist;
-        GridView1.DataBind();
+        pointlist = access.GetFFTDataByDates(DropDownList1.SelectedItem.ToString(), DropDownList2.SelectedValue.ToString());
+        foreach (DataPointModel point in pointlist)
+        {
+            DataPointChart.Series["DataPointSeriesX"].Points.AddXY(count, point.DataPointX);
+            DataPointChart.Series["DataPointSeriesY"].Points.AddXY(count, point.DataPointY);
+            DataPointChart.Series["DataPointSeriesZ"].Points.AddXY(count, point.DataPointZ);
+            count++;
+        }
     }
 }

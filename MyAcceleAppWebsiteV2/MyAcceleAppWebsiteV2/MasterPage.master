@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="MasterPageStyle.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width">
+    <script src="js/Chart.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server" >
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="" style="height: 127px; width: 284px;" />
+                </div>
+                <ul>
+                    <li><a href="About.aspx">About</a></li>
+                    <li><a href="Contact.aspx">Contact</a></li>
+                    <li><a href="Home.aspx">Home</a></li>
+                </ul>
+            </div>
+            <nav>
+                <ul>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <div class="sidebar">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder> 
+            </div>
+        </section>
+
+        <section>
+            <div class="maincontent">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>      
+            </div>
+        </section>
+
+
+    </form>
+</body>
+</html>

@@ -16,10 +16,25 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <div>
-        <asp:GridView ID="GridView1" runat="server" CellPadding="5" CssClass="gridview">
-            <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
-
-        </asp:GridView>
+ <asp:Chart ID="DataPointChart" runat="server" CssClass="chart" BackColor="Gold" Width="1500px" Height="900px">
+            <Series>
+                <asp:Series Name="DataPointSeriesX" ChartArea="ChartArea1" ChartType="Line" Color="Blue"></asp:Series>
+                <asp:Series Name="DataPointSeriesY" ChartArea="ChartArea1" ChartType="Line" Color="Yellow"></asp:Series>
+                <asp:Series Name="DataPointSeriesZ" ChartArea="ChartArea1" ChartType="Line" Color="Red"></asp:Series>
+            </Series>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1" BackColor="Black">
+                    <AxisX Title="Points" TitleFont="Franklin Gothic Medium, 20pt, style=Bold"></AxisX>
+                    <AxisY Title="G's" TitleFont="Franklin Gothic Medium, 20pt, style=Bold"></AxisY>
+                </asp:ChartArea>
+            </ChartAreas>
+            <Legends>
+                <asp:Legend Alignment="Near" Docking="Right"/>
+            </Legends>
+            <Titles>
+                <asp:Title Text="G's vs Points" Font="Franklin Gothic Medium, 20pt, style=Bold"/>
+            </Titles>
+        </asp:Chart>
     </div>
 </asp:Content>
 

@@ -36,7 +36,8 @@ namespace MyAcceleAppSQL
                         DataPointModel temp = new DataPointModel()
                         {
                             DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]),
-                            DataPointID = Convert.ToInt32(reader["DataPointID"]),
+                            DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]),
+                            DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]),
                             DataPointX = Convert.ToDouble(reader["DataPointX"]),
                             DataPointY = Convert.ToDouble(reader["DataPointY"]),
                             DataPointZ = Convert.ToDouble(reader["DataPointZ"]),
@@ -67,7 +68,8 @@ namespace MyAcceleAppSQL
                         DataPointModel temp = new DataPointModel()
                         {
                             DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]),
-                            DataPointID = Convert.ToInt32(reader["DataPointID"]),
+                            DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]),
+                            DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]),
                             DataPointX = Convert.ToDouble(reader["DataPointX"]),
                             DataPointY = Convert.ToDouble(reader["DataPointY"]),
                             DataPointZ = Convert.ToDouble(reader["DataPointZ"]),
@@ -81,13 +83,14 @@ namespace MyAcceleAppSQL
 
         public int AddRawDataPoint(DataPointModel ADD)
         {
-            string sqlQuery = "INSERT into RawDataTable (DataPointDateTime, DataPointX, DataPointY, DataPointZ)  OUTPUT INSERTED.DataPointID VALUES (@DataPointDateTime, @DataPointX, @DataPointY, @DataPointZ)";
+            string sqlQuery = "INSERT into RawDataTable (DataPointDateTime, DataPointGroupID, DataPointX, DataPointY, DataPointZ)  OUTPUT INSERTED.DataPointID VALUES (@DataPointDateTime, @DataPointGroupID, @DataPointX, @DataPointY, @DataPointZ)";
 
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
                 cmd.Parameters.Add("@DataPointDateTime", SqlDbType.DateTime).Value = ADD.DataPointDateTime;
+                cmd.Parameters.Add("@DataPointGroupID", SqlDbType.Int).Value = ADD.DataPointGroupID;
                 cmd.Parameters.Add("@DataPointX", SqlDbType.Float).Value = ADD.DataPointX;
                 cmd.Parameters.Add("@DataPointY", SqlDbType.Float).Value = ADD.DataPointY;
                 cmd.Parameters.Add("@DataPointZ", SqlDbType.Float).Value = ADD.DataPointZ;
@@ -100,7 +103,7 @@ namespace MyAcceleAppSQL
         public DataPointModel GetRawDataPointByID(int ID)
         {
             DataPointModel point = new DataPointModel();
-            string sqlQuery = "SELECT * from RawDataTable where DataPointID=@ID";
+            string sqlQuery = "SELECT * from RawDataTable where DataPointUniqueID=@ID";
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
@@ -110,7 +113,8 @@ namespace MyAcceleAppSQL
                 {
                     while (reader.Read())
                     {
-                        point.DataPointID = Convert.ToInt32(reader["DataPointID"]);
+                        point.DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]);
+                        point.DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]);
                         point.DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]);
                         point.DataPointX = Convert.ToDouble(reader["DataPointX"]);
                         point.DataPointY = Convert.ToDouble(reader["DataPointY"]);
@@ -123,26 +127,27 @@ namespace MyAcceleAppSQL
 
         public int DeleteRawDataPointByID(int ID)
         {
-            string sqlQuery = "DELETE from RawDataTable Where DataPointID=@DataPointID";
+            string sqlQuery = "DELETE from RawDataTable Where DataPointUniqueID=@DataPointUniqueID";
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
-                cmd.Parameters.Add("@DataPointID", SqlDbType.Int).Value = ID;
+                cmd.Parameters.Add("@DataPointUniqueID", SqlDbType.Int).Value = ID;
                 return cmd.ExecuteNonQuery();
             }
         }
 
         public int EditRawDataPoint(DataPointModel edit)
         {
-            string sqlQuery = "UPDATE RawDataTable SET DataPointDateTime=@DataPointDateTime, DataPointX=@DataPointX, DataPointY=@DataPointY, DataPointZ=@DataPointZ  Where DataPointID=@DataPointID";
+            string sqlQuery = "UPDATE RawDataTable SET DataPointDateTime=@DataPointDateTime, DataPointGroupID=@DataPointGroupID, DataPointX=@DataPointX, DataPointY=@DataPointY, DataPointZ=@DataPointZ  Where DataPointID=@DataPointID";
 
             //No need to use SqlDataReader here since we are just using the Sql Query to persist to database
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
-                cmd.Parameters.Add("@DataPointID", SqlDbType.Int).Value = edit.DataPointID;
+                cmd.Parameters.Add("@DataPointUniqueID", SqlDbType.Int).Value = edit.DataPointUniqueID;
+                cmd.Parameters.Add("@DataPointGroupID", SqlDbType.Int).Value = edit.DataPointGroupID;
                 cmd.Parameters.Add("@DataPointDateTime", SqlDbType.DateTime).Value = edit.DataPointDateTime;
                 cmd.Parameters.Add("@DataPointX", SqlDbType.Float).Value = edit.DataPointX;
                 cmd.Parameters.Add("@DataPointY", SqlDbType.Float).Value = edit.DataPointY;
@@ -169,7 +174,8 @@ namespace MyAcceleAppSQL
                         DataPointModel temp = new DataPointModel()
                         {
                             DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]),
-                            DataPointID = Convert.ToInt32(reader["DataPointID"]),
+                            DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]),
+                            DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]),
                             DataPointX = Convert.ToDouble(reader["DataPointX"]),
                             DataPointY = Convert.ToDouble(reader["DataPointY"]),
                             DataPointZ = Convert.ToDouble(reader["DataPointZ"]),
@@ -200,7 +206,8 @@ namespace MyAcceleAppSQL
                         DataPointModel temp = new DataPointModel()
                         {
                             DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]),
-                            DataPointID = Convert.ToInt32(reader["DataPointID"]),
+                            DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]),
+                            DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]),
                             DataPointX = Convert.ToDouble(reader["DataPointX"]),
                             DataPointY = Convert.ToDouble(reader["DataPointY"]),
                             DataPointZ = Convert.ToDouble(reader["DataPointZ"]),
@@ -214,13 +221,14 @@ namespace MyAcceleAppSQL
 
         public int AddFFTDataPoint(DataPointModel ADD)
         {
-            string sqlQuery = "INSERT into FFTDataTable (DataPointDateTime, DataPointX, DataPointY, DataPointZ)  OUTPUT INSERTED.DataPointID VALUES (@DataPointDateTime, @DataPointX, @DataPointY, @DataPointZ)";
+            string sqlQuery = "INSERT into FFTDataTable (DataPointDateTime, DataPointGroupID, DataPointX, DataPointY, DataPointZ)  OUTPUT INSERTED.DataPointID VALUES (@DataPointDateTime, @DataPointGroupID, @DataPointX, @DataPointY, @DataPointZ)";
 
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
                 cmd.Parameters.Add("@DataPointDateTime", SqlDbType.DateTime).Value = ADD.DataPointDateTime;
+                cmd.Parameters.Add("@DataPointGroupID", SqlDbType.Int).Value = ADD.DataPointGroupID;
                 cmd.Parameters.Add("@DataPointX", SqlDbType.Float).Value = ADD.DataPointX;
                 cmd.Parameters.Add("@DataPointY", SqlDbType.Float).Value = ADD.DataPointY;
                 cmd.Parameters.Add("@DataPointZ", SqlDbType.Float).Value = ADD.DataPointZ;
@@ -233,7 +241,7 @@ namespace MyAcceleAppSQL
         public DataPointModel GetFFTDataPointByID(int ID)
         {
             DataPointModel point = new DataPointModel();
-            string sqlQuery = "SELECT * from FFTDataTable where DataPointID=@ID";
+            string sqlQuery = "SELECT * from FFTDataTable where DataPointUniqueID=@ID";
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
@@ -243,7 +251,8 @@ namespace MyAcceleAppSQL
                 {
                     while (reader.Read())
                     {
-                        point.DataPointID = Convert.ToInt32(reader["DataPointID"]);
+                        point.DataPointUniqueID = Convert.ToInt32(reader["DataPointUniqueID"]);
+                        point.DataPointGroupID = Convert.ToInt32(reader["DataPointGroupID"]);
                         point.DataPointDateTime = Convert.ToDateTime(reader["DataPointDateTime"]);
                         point.DataPointX = Convert.ToDouble(reader["DataPointX"]);
                         point.DataPointY = Convert.ToDouble(reader["DataPointY"]);
@@ -256,26 +265,27 @@ namespace MyAcceleAppSQL
 
         public int DeleteFFTDataPointByID(int ID)
         {
-            string sqlQuery = "DELETE from FFTDataTable Where DataPointID=@DataPointID";
+            string sqlQuery = "DELETE from FFTDataTable Where DataPointUniqueID=@DataPointUniqueID";
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
-                cmd.Parameters.Add("@DataPointID", SqlDbType.Int).Value = ID;
+                cmd.Parameters.Add("@DataPointUniqueID", SqlDbType.Int).Value = ID;
                 return cmd.ExecuteNonQuery();
             }
         }
 
         public int EditFFTDataPoint(DataPointModel edit)
         {
-            string sqlQuery = "UPDATE FFTDataTable SET DataPointDateTime=@DataPointDateTime, DataPointX=@DataPointX, DataPointY=@DataPointY, DataPointZ=@DataPointZ  Where DataPointID=@DataPointID";
+            string sqlQuery = "UPDATE FFTDataTable SET DataPointDateTime=@DataPointDateTime, DataPointGroupID=@DataPointGroupID, DataPointX=@DataPointX, DataPointY=@DataPointY, DataPointZ=@DataPointZ  Where DataPointID=@DataPointID";
 
             //No need to use SqlDataReader here since we are just using the Sql Query to persist to database
             using (SqlConnection con = new SqlConnection(connectionstring))
             using (SqlCommand cmd = new SqlCommand(sqlQuery, con))
             {
                 con.Open();
-                cmd.Parameters.Add("@DataPointID", SqlDbType.Int).Value = edit.DataPointID;
+                cmd.Parameters.Add("@DataPointUniqueID", SqlDbType.Int).Value = edit.DataPointUniqueID;
+                cmd.Parameters.Add("@DataPointGroupID", SqlDbType.Int).Value = edit.DataPointGroupID;
                 cmd.Parameters.Add("@DataPointDateTime", SqlDbType.DateTime).Value = edit.DataPointDateTime;
                 cmd.Parameters.Add("@DataPointX", SqlDbType.Float).Value = edit.DataPointX;
                 cmd.Parameters.Add("@DataPointY", SqlDbType.Float).Value = edit.DataPointY;

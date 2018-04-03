@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.Devices.I2c;
+using Windows.Networking.Sockets;
+using Windows.Storage.Streams;
+using Windows.Devices.Bluetooth.Rfcomm;
+using Windows.Devices.Enumeration;
 
 namespace MyAcceleAppClient
 {
@@ -16,45 +19,49 @@ namespace MyAcceleAppClient
 
     public class ADXL345
     {
-        private const byte ACCEL_REG_POWER_CONTROL = 0x2D;  /* Address of the Power Control register                */
-        private const byte ACCEL_REG_DATA_FORMAT = 0x31;    /* Address of the Data Format register                  */
-        private const byte ACCEL_REG_X = 0x32;              /* Address of the X Axis data register                  */
-        private const byte ACCEL_REG_Y = 0x34;              /* Address of the Y Axis data register                  */
-        private const byte ACCEL_REG_Z = 0x36;              /* Address of the Z Axis data register                  */
-
-        private const byte ACCEL_I2C_ADDR = 0x53;           /* 7-bit I2C address of the ADXL345 with SDO pulled low */
-
-        private const byte SPI_CHIP_SELECT_LINE = 0;        /* Chip select line to use                              */
-        private const byte ACCEL_SPI_RW_BIT = 0x80;         /* Bit used in SPI transactions to indicate read/write  */
-        private const byte ACCEL_SPI_MB_BIT = 0x40;         /* Bit used to indicate multi-byte SPI transactions     */
-
-        private I2cDevice IC2Accele;
-        public string comfailed;
-
-        public async void InitializeIC2()
+        private StreamSocket _socket; //Bluetooth connection socket
+        private RfcommDeviceService _service;//Device information collection
+        private enum commands
         {
-            //Create an instance of I2cConnectionSettings, allowing to configure the I2c settings
-            I2cConnectionSettings settings = new I2cConnectionSettings(ACCEL_I2C_ADDR);
-            settings.BusSpeed = I2cBusSpeed.FastMode;
+            BEGIN = 1,
+            SETRANGE2G = 2,
+            SETRANGE4G = 3,
+            SETRANGE8G = 4,
+            SETRANGE16G = 5,
+            SETDATARATE100HZ = 6,
+            SETDATARATE200HZ = 7,
+            SETDATARATE400HZ = 8,
+            SETDATARATE800HZ = 9,
+            SETDATARATE1600HZ = 10,
+            SETDATARATE3200HZ = 11,
+            READDATA = 12,
+        };
 
-            //Create and intance of I2cController with the I2cConnectingSettings
-            I2cController controller = await I2cController.GetDefaultAsync();
-            IC2Accele = controller.GetDevice(settings);
+        public async void InitializeAccele()
+        {
+            byte[] test = new byte[6];
 
-            byte[] WriteBuf_DataFormat = new byte[] { ACCEL_REG_DATA_FORMAT, 0x01 };        /* 0x01 sets range to +- 4Gs*/
-            byte[] WriteBuf_PowerControl = new byte[] { ACCEL_REG_POWER_CONTROL, 0x08 };    /* 0x08 puts the accelerometer into measuremen*/
+            tbError.Text = string.Empty;
 
-            //Format the ADXL345 
-            try
+            byte[] command = { BEGIN };
+            uint temp = await Write(command);
+
+            test = await Read(6);
+
+            var taskbegin = this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                IC2Accele.Write(WriteBuf_DataFormat);
-                IC2Accele.Write(WriteBuf_PowerControl);
-            }
-            catch (Exception ex)
+                tbOutput.Text = Encoding.ASCII.GetString(test);
+            });
+
+            command[0] = 3;
+
+            temp = await Write(command);
+            test = await Read(6);
+
+            var task2G = this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                comfailed = "Failed to communicate with device" + ex.Message;
-                return;
-            }
+                tbOutput.Text = Encoding.ASCII.GetString(test);
+            });
         }
 
         public Acceleration ReadAccele()
