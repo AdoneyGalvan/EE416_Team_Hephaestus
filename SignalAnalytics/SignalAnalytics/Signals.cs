@@ -16,7 +16,7 @@ namespace SignalAnalytics
     //      RMS analysis
     //      Frequency axis scaling
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    class SigFunctions
+    public class SigFunctions
     {
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //Computes Radix 2 FFT
@@ -144,13 +144,13 @@ namespace SignalAnalytics
             }
 
             //for first half of the FFT
-            for (int i = 0; i < half; i++)
+            for (int i = 0; i < half + 1; i++)
             {
-                arr[i] = temp[half + 1];
+                arr[i] = temp[half + i];
             }
 
             //for last half of the FFT
-            for (int i = half; i < length; i++)
+            for (int i = half; i < length - 1; i++)
             {
                 arr[i] = temp[i - half];
             }
