@@ -18,17 +18,18 @@ namespace VibrationSensorAgent
             set { _notify = value; }
         }   // End property
 
-        public void PrintAction(Action action)
+        public string PrintAction(Action action)
         {
+            string message;
             if (action.Notify == true)
             {
                 // Notify the user
-                Console.WriteLine("Notify maintenance!");
+                return message = "Notify maintenance!";
             }
             else
             {
                 // Notify the user
-                Console.WriteLine("Pass");
+                return message = "Pass!";
             }
         }   // End function
     }   // End class

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataPointViewModelServerWebsite;
 
 namespace VibrationSensorAgent
 {
@@ -17,7 +18,7 @@ namespace VibrationSensorAgent
         {
             _breakthroughCount = 5;
             _average = 0;
-            _threshold = 100;
+            _threshold = 0.3;
             _actions = new Stack<Action>();
         }   // End constructor
 
@@ -39,7 +40,7 @@ namespace VibrationSensorAgent
             set { _threshold = value; }
         }   // End property
 
-        public Action Process(double[] dataSample)
+        public Action ProcessFFT(double[] dataSample)
         {
             int count = 0;
 
@@ -48,6 +49,33 @@ namespace VibrationSensorAgent
                 for (int i = 0; i < dataSample.Length; i++)
                 {
                     if (dataSample[i] > _threshold)
+                    {
+                        count++;    // Increment number of times past threshold
+                        if (count > _breakthroughCount)
+                        {
+                            // Notify the user
+                            _actions.Push(new Action() { Notify = true });
+                            break;
+                        }
+                    }
+                    else
+                        _actions.Push(new Action() { Notify = false });
+                }
+            }
+            Action action = _actions.Peek();
+            _actions.Pop();
+            return action;
+        }   // End function
+
+        public Action ProcessRMS(List<DataPointRMSModel> dataSample)
+        {
+            int count = 0;
+
+            if (_actions.Count == 0)
+            {
+                foreach (DataPointRMSModel point in dataSample)
+                {
+                    if (point.DataPointXRMS > _threshold)
                     {
                         count++;    // Increment number of times past threshold
                         if (count > _breakthroughCount)

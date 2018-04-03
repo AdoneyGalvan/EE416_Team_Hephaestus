@@ -1,0 +1,141 @@
+﻿*{
+    border-radius: 0 !important;
+}
+
+body{
+    background-color:black;
+}
+
+.MainContent{
+    background-color:grey;
+    min-height:1000px;
+}
+
+.SideBar{
+    background-color:black;
+    min-height:300px;
+}
+
+#NavBarHome{
+    background-color:black;
+    color:gold; 
+}
+
+#NavBarHome:hover{
+    background-color: gold;
+    color: black;
+}
+
+#NavBarAbout {
+    background-color: black;
+    color: gold;
+}
+
+#NavBarAbout:hover{
+    background-color: gold;
+    color: black;
+}
+
+#NavBarContact {
+    background-color: black;
+    color: gold;
+}
+
+#NavBarContact:hover{
+    background-color: gold;
+    color: black;
+}
+
+#StartDateHeader {
+    color: gold;
+    margin-top: 5px;
+}
+
+#EndDateHeader {
+    color: gold;
+    margin-top: 5px;
+}
+
+#GroupHeader {
+    color: gold;
+    margin-top: 5px;
+}
+
+
+.SelectionDatesButton {
+    color: black;
+    background-color: gold;
+    border: none;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.SelectionDatesButton:hover {
+    color: gold;
+    background-color: black;
+    border: none;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.SelectionGroupButton {
+    color: black;
+    background-color: gold;
+    border: none;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+.SelectionGroupButton:hover{
+    color: gold;
+    background-color: black;
+    border: none;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+.dropdownlist {
+    border: none;
+    -webkit-appearance: none;
+    background-color: black;
+    color: gold;
+    min-width: 100%;
+    margin: 2px 2px 2px 2px;
+    
+}
+
+.RMS {
+    background-color:brown;
+    min-width:600px;
+    min-height:300px;
+}
+
+.XT{
+
+}
+
+.YT{
+
+}
+
+.ZT{
+
+}
+
+
+.XF{
+
+}
+
+
+.YF{
+
+}
+
+.ZF{
+
+}
