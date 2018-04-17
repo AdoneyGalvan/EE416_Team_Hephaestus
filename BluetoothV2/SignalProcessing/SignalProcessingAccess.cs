@@ -40,7 +40,7 @@ namespace SignalProcessing
                 caldata[i] = data[i].Magnitude;
             }
 
-            double max = Max(caldata);
+            double max = caldata.Max();
 
             for (int i = 0; i < samplenum; i++)
             {
@@ -103,24 +103,6 @@ namespace SignalProcessing
         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Returns maximum value of the array
-        //Inputs: array of doubles
-        //Output: double of max value
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        public double Max(double[] arr)
-        {
-            double maxVal = arr[0];
-
-            for (int i = 0; i < LengthSamples - 1; i++)
-            {
-                //Assigns new max value if next in array is greater than prev
-                if (arr[i + 1] > arr[i]) maxVal = arr[i + 1];
-            }
-
-            return maxVal;
-        }
-
-        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //Returns circshift FFT array
         //Inputs: array of doubles, length of array
         //Output: none
@@ -130,7 +112,7 @@ namespace SignalProcessing
             int half = length / 2;
 
             //create new temp array
-            double[] temp = new double[1024];
+            double[] temp = new double[length + 1];
 
             //populate temp array with current values
             for (int i = 0; i < length; i++)

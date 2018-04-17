@@ -31,17 +31,17 @@ body{
     color: gold;
 }
 
-#NavBarAbout:hover{
+#NavBarAbout:hover {
     background-color: gold;
     color: black;
 }
 
 #NavBarContact {
-    background-color: black;
+    background-color:black;
     color: gold;
 }
 
-#NavBarContact:hover{
+#NavBarContact:hover {
     background-color: gold;
     color: black;
 }
@@ -61,6 +61,10 @@ body{
     margin-top: 5px;
 }
 
+#ExportHeader {
+    color: gold;
+    margin-top: 5px;
+}
 
 .SelectionDatesButton {
     color: black;
@@ -114,28 +118,26 @@ body{
     min-height:300px;
 }
 
-.XT{
-
+.CheckBox {
+    float:right;
+    margin-left:5px;
+    margin-right:5px;
+    text-align: left;
 }
 
-.YT{
-
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+    float: none;
+    display: inline-block;
+   }
 }
 
-.ZT{
-
-}
-
-
-.XF{
-
-}
-
-
-.YF{
-
-}
-
-.ZF{
-
+.collapse.width {
+    height: auto;
+    -webkit-transition: width 0.35s ease;
+    -moz-transition: width 0.35s ease;
+    -o-transition: width 0.35s ease;
+    transition: width 0.35s ease;
 }

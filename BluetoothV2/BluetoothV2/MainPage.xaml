@@ -6,24 +6,45 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <StackPanel>
-        <TextBox Name="tbOutput"
-           Text="2"
-           FontSize="40" />
-        <Button Name="btnRead"
-          Content="Read Data"
-          Click="btnRead_Click"
-          FontSize="40" />
-        <Button Name="btnConnect"
-          Content="Connect"
-          Click="btnConnect_Click"
-          FontSize="40" />
-        <Button Name="btnDisConnect"
-          Content="Disconnect"
-          Click="btnDisConnect_Click"
-          FontSize="40" />
-        <TextBlock Name="tbError"
-             FontSize="10" />
-        <ComboBox Name="PortComboBox"/>
-    </StackPanel>
+    <Grid Name="OuterGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*">
+            </RowDefinition>
+            <RowDefinition Height="11*">
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*">
+
+            </ColumnDefinition>
+            <ColumnDefinition Width="5*">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0" Grid.Row="0" Source="Assets/Square44x44Logo.scale-125.png"/>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <ComboBox Name="comboBox1" HorizontalAlignment="Stretch" PlaceholderText="--Select DataRate Hz" Foreground="Gold" PlaceholderForeground="Gold" Margin="0,0,0.6,0" VerticalAlignment="Center" HorizontalContentAlignment="Center">
+                <ComboBoxItem Name="option1r" Foreground="Gold" HorizontalAlignment="Center">100 Hz</ComboBoxItem>
+                <ComboBoxItem Name="option2r" Foreground="Gold" HorizontalAlignment="Center">200 Hz</ComboBoxItem>
+                <ComboBoxItem Name="option3r" Foreground="Gold" HorizontalAlignment="Center">400 Hz</ComboBoxItem>
+                <ComboBoxItem Name="option4r" Foreground="Gold" HorizontalAlignment="Center">800 Hz</ComboBoxItem>
+                <ComboBoxItem Name="option5r" Foreground="Gold" HorizontalAlignment="Center">1600 Hz</ComboBoxItem>
+            </ComboBox>
+            <ComboBox Name="comboBox2" HorizontalAlignment="Stretch" PlaceholderText="--Select Sensitivity" Foreground="Gold" PlaceholderForeground="Gold" Margin="0,0,0.6,0" VerticalAlignment="Center" HorizontalContentAlignment="Center">
+                <ComboBoxItem Name="option1s" Foreground="Gold" HorizontalAlignment="Center">+/- 2 g</ComboBoxItem>
+                <ComboBoxItem Name="option2s" Foreground="Gold" HorizontalAlignment="Center">+/- 4 g</ComboBoxItem>
+                <ComboBoxItem Name="option3s" Foreground="Gold" HorizontalAlignment="Center">+/- 8 g</ComboBoxItem>
+                <ComboBoxItem Name="option4s" Foreground="Gold" HorizontalAlignment="Center">+/- 16 g</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="btnConnect" Content="Connect" Click="btnConnect_Click" Background="Black" Foreground="Gold" HorizontalAlignment="Center" Margin="0,0,0.6,0" Width="249" />
+            <Button Name="btnRead" Content="Read Data" Click="btnRead_Click" Background="Black" Foreground="Gold" HorizontalAlignment="Center" Margin="0,0,0.6,0" Width="249"/>
+            <Button Name="btnDisConnect" Content="Disconnect" Click="btnDisConnect_Click" Background="Black" Foreground="Gold" HorizontalAlignment="Center" Margin="0,0,0.6,0" Width="249"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="tbOutput" TextWrapping="Wrap" MaxHeight="172" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+            <TextBlock Name="tbError"/>
+        </StackPanel>
+    </Grid>
 </Page>

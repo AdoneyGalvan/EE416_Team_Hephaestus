@@ -57,7 +57,9 @@ DATARATE ADXL345::GetDataRate(void)
 	Wire.beginTransmission(ADXL345_ADDRESS);
 	i2cwrite(ADXL345_REG_BW_RATE);
 	Wire.endTransmission();
-	Wire.requestFrom(ADXL345_ADDRESS, 0x0F);
+	Wire.requestFrom(ADXL345_ADDRESS, 1);
+
+	return (DATARATE)(i2cread() & 0x0F);
 }
 
 int16_t ADXL345::GetX(void)
@@ -66,6 +68,7 @@ int16_t ADXL345::GetX(void)
 	i2cwrite(ADXL345_REG_DATAX0);
 	Wire.endTransmission();
 	Wire.requestFrom(ADXL345_ADDRESS, 2);
+
 	return (uint16_t)(i2cread() | (i2cread() << 8));
 }
 int16_t ADXL345::GetY(void)
@@ -107,6 +110,7 @@ bool ADXL345::SetDataRate(DATARATE dataRate)
 bool ADXL345::Begin() {
 
 	Wire.begin();
+	Wire.setClock(400000L);
 	/* Check connection */
 	uint8_t deviceid = GetDeviceID();
 	if (deviceid != 0xE5)

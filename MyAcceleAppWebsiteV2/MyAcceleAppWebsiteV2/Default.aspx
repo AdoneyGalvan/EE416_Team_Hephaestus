@@ -11,7 +11,7 @@
                         <h5 id="StartDateHeader">Select Start Date</h5>
                     </div>
                     <div class="row no-gutters">
-                        <asp:TextBox ID="StartDate" runat="server" CssClass="form-control col-11" Height="25px" BackColor="Black" ForeColor="Gold" BorderStyle="None" BorderColor="Black"></asp:TextBox>
+                        <asp:TextBox ID="StartDate" runat="server" CssClass="form-control col-11" Height="25px" BackColor="Black" ForeColor="Gold" BorderStyle="None" BorderColor="Black" ReadOnly="True"></asp:TextBox>
                         <asp:ImageButton ID="ImageStartDate" runat="server" ImageUrl="~/Images/calendar (3).png" CssClass="form-control col-1" Height="30px" OnClick="ImageStartDate_Click" BackColor="Black" BorderStyle="None" BorderColor="Black" ImageAlign="Top"/>
                         </div>
                     <div class="row no-gutters">
@@ -21,11 +21,11 @@
                         <h5 id="EndDateHeader">Select End Date</h5>
                     </div>
                     <div class="row no-gutters">
-                        <asp:TextBox ID="EndDate" runat="server" CssClass="form-control col-11" Height="25px" BackColor="Black" ForeColor="Gold" BorderStyle="None" BorderColor="Black"></asp:TextBox>
+                        <asp:TextBox ID="EndDate" runat="server" CssClass="form-control col-11" Height="25px" BackColor="Black" ForeColor="Gold" BorderStyle="None" BorderColor="Black" ReadOnly="True"></asp:TextBox>
                         <asp:ImageButton ID="ImageEndDate" runat="server" ImageUrl="~/Images/calendar (3).png" CssClass="form-control col-1" Height="30px" OnClick="ImageEndDate_Click" BackColor="Black" BorderStyle="None" BorderColor="Black" ImageAlign="Top"/>
                     </div>
                     <div class="row no-gutters">
-                        <asp:Button ID="SelectDates" runat="server" Text="Select Dates" CssClass="btn btn-warning btn-block" Height="35px" OnClick="SelectDates_Click"/>
+                        <asp:Button ID="SelectDates" runat="server" Text="Select Dates" CssClass="btn btn-warning btn-block" Height="35px" OnClick="SelectDates_Click" />
                     </div>
                     <div class="row no-gutters">
                         <asp:Calendar ID="CalendarTo" CssClass="container" runat="server" BackColor="Black" ForeColor="#FFCC00" DayHeaderStyle-ForeColor="Black" DayHeaderStyle-BackColor="Black" TitleStyle-BackColor="#FFCC00" TitleStyle-ForeColor="Black" SelectedDayStyle-BackColor="#FFCC00" SelectedDayStyle-ForeColor="Black" OnSelectionChanged="CalendarTo_SelectionChanged"></asp:Calendar>
@@ -40,9 +40,31 @@
                         <asp:Button ID="SelectGroup" runat="server" Text="Select Group" CssClass="btn btn-warning btn-block" Height="35px" OnClick="SelectGroup_Click" />
                     </div>
                     <div class="row no-gutters">
-                        <asp:TextBox ID="AgentTextBox" runat="server" ReadOnly="True"></asp:TextBox>
+                        <div class="col-4 align-content-center">
+                            <asp:CheckBox ID="CheckBoxX" Text="-X-Axis-" runat="server" ForeColor="#FFCC00" CssClass="CheckBox"/>
+                        </div>
+                        <div class="col-4 align-content-center"">
+                            <asp:CheckBox ID="CheckBoxY" Text="-Y-Axis-"  runat="server" ForeColor="#FFCC00" CssClass="CheckBox"/>
+                        </div>
+                        <div class="col-4 align-content-center"">
+                            <asp:CheckBox ID="CheckBoxZ" Text="-Z-Axis-" runat="server" ForeColor="#FFCC00" CssClass="CheckBox"/>
+                        </div>
                     </div>
-
+                    <div class="row no-gutters">
+                        <asp:Button ID="SelectAxis" runat="server" Text="Select Axis" CssClass="btn btn-warning btn-block" Height="35px" OnClick="SelectAxis_Click" />
+                    </div>
+                    <div class="row no-gutters">
+                        <h5 id="ExportHeader">Enter Filename</h5>
+                    </div>
+                    <div class="row no-gutters">
+                        <asp:TextBox ID="ExportTextBox" CssClass="form-control col-12" Height="25px" BackColor="Gray" ForeColor="Black" runat="server" ></asp:TextBox>
+                    </div>
+                    <div class="row no-gutters">
+                        <asp:Button ID="Export" runat="server" Text="Export To Excel" CssClass="btn btn-warning btn-block" Height="35px" OnClick="Export_Click"/>
+                    </div>
+                    <div class="row no-gutters">
+                        <asp:TextBox ID="AgentTextBox" CssClass="form-control col-12" Height="25px" runat="server" ReadOnly="True"></asp:TextBox>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-10 col-md-12 col-sm-12 col-sx-12">
@@ -51,9 +73,9 @@
                         <div class="col-12">
                                 <asp:Chart ID="DataPointRMSChart" runat="server" CssClass="table  table-bordered table-condensed table-responsive" BackColor="Gray" Height="500px" Width="1500px">
                                     <Series>
-                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33"></asp:Series>
-                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Yellow"></asp:Series>
-                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red"></asp:Series>
+                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33" ToolTip="RMS: #VALY, Time: #VALX"></asp:Series>
+                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#0099ff" ToolTip="RMS: #VALY, Time: #VALX"></asp:Series>
+                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red" ToolTip="RMS: #VALY, Time: #VALX"></asp:Series>
                                     </Series>
                                     <ChartAreas>
                                         <asp:ChartArea Name="ChartArea1" BackColor="Black">
@@ -85,9 +107,9 @@
                         <div class="col-12">
                                 <asp:Chart ID="DataPointTimeChart" runat="server" CssClass="table  table-bordered table-condensed table-responsive" BackColor="Gray" Height="500px" Width="1500px">
                                     <Series>
-                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33"></asp:Series>
-                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Yellow"></asp:Series>
-                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red"></asp:Series>
+                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33" ToolTip="G's: #VALY, Time: #VALX"></asp:Series>
+                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#0099ff" ToolTip="G's: #VALY, Time: #VALX"></asp:Series>
+                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red" ToolTip="G's: #VALY, Time: #VALX"></asp:Series>
                                     </Series>
                                     <ChartAreas>
                                         <asp:ChartArea Name="ChartArea1" BackColor="Black">
@@ -119,9 +141,9 @@
                         <div class="col-12">
                                 <asp:Chart ID="DataPointFFTChart" runat="server" CssClass="table  table-bordered table-condensed table-responsive" BackColor="Gray" Height="500px" Width="1500px">
                                     <Series>
-                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33"></asp:Series>
-                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Yellow"></asp:Series>
-                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red"></asp:Series>
+                                        <asp:Series Name="X-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#66ff33" ToolTip="Amplitude: #VALY, Frequency: #VALX"></asp:Series>
+                                        <asp:Series Name="Y-Axis" ChartArea="ChartArea1" ChartType="Line" Color="#0099ff" ToolTip="Amplitude: #VALY, Frequency: #VALX"></asp:Series>
+                                        <asp:Series Name="Z-Axis" ChartArea="ChartArea1" ChartType="Line" Color="Red" ToolTip="Amplitude: #VALY, Frequency: #VALX"></asp:Series>
                                     </Series>
                                     <ChartAreas>
                                         <asp:ChartArea Name="ChartArea1" BackColor="Black">
