@@ -137,7 +137,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\FFTDataController.cs" />
-    <Compile Include="Controllers\RawDataController.cs" />
+    <Compile Include="Controllers\RMSDataController.cs" />
+    <Compile Include="Controllers\TimeDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -180,9 +181,13 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MyAcceleAppSQL\MyAcceleAppSQL\MyAcceleAppSQL.csproj">
-      <Project>{81cd8eaf-0804-44ca-80a3-e8cb9c762665}</Project>
-      <Name>MyAcceleAppSQL</Name>
+    <ProjectReference Include="..\..\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite.csproj">
+      <Project>{3794a033-55be-489a-8bbc-97715eaa4ac8}</Project>
+      <Name>DataPointViewModelServerWebsite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLDataBase\SQLDataBase.csproj">
+      <Project>{22332832-ee8b-4530-9e72-aad627353196}</Project>
+      <Name>SQLDataBase</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

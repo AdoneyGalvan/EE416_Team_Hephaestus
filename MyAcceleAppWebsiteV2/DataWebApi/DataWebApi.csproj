@@ -51,6 +51,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <ProjectReference Include="..\DataPointViewModel\DataPointViewModel.csproj">
       <Project>{6bf17233-bf1d-4bef-ae1b-7faaf4940cf3}</Project>
       <Name>DataPointViewModel</Name>
@@ -58,6 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+=======
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite.csproj">
+      <Project>{3794a033-55be-489a-8bbc-97715eaa4ac8}</Project>
+      <Name>DataPointViewModelServerWebsite</Name>
+    </ProjectReference>
+>>>>>>> 9f0b4938a3dd091a5acf559c933e58839cc23d7a
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MyAcceleAppWebsiteV2", "MyAcceleAppWebsiteV2\", "{C015C28B-CADD-4E82-8538-193E517E8CB4}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.1"
+<<<<<<< HEAD
 		ProjectReferences = "{4ba5b285-0199-4092-a6ae-8f36a2a08bd8}|DataWebApi.dll;{6bf17233-bf1d-4bef-ae1b-7faaf4940cf3}|DataPointViewModel.dll;"
+=======
+		ProjectReferences = "{4ba5b285-0199-4092-a6ae-8f36a2a08bd8}|DataWebApi.dll;{3794a033-55be-489a-8bbc-97715eaa4ac8}|DataPointViewModelServerWebsite.dll;{c27df4fc-fe5d-4517-8eca-29c8f7cf4ee3}|VibrationSensorAgent.dll;"
+>>>>>>> 9f0b4938a3dd091a5acf559c933e58839cc23d7a
 		Debug.AspNetCompiler.VirtualPath = "/localhost_56693"
 		Debug.AspNetCompiler.PhysicalPath = "MyAcceleAppWebsiteV2\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_56693\"
@@ -26,10 +30,19 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "MyAcceleAppWebsiteV2", "MyA
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPointViewModel", "DataPointViewModel\DataPointViewModel.csproj", "{6BF17233-BF1D-4BEF-AE1B-7FAAF4940CF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWebApi", "DataWebApi\DataWebApi.csproj", "{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}"
 EndProject
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataWebApi", "DataWebApi\DataWebApi.csproj", "{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataPointViewModelServerWebsite", "..\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite\DataPointViewModelServerWebsite.csproj", "{3794A033-55BE-489A-8BBC-97715EAA4AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibrationSensorAgent", "..\VibrationSensorAgent\VibrationSensorAgent\VibrationSensorAgent.csproj", "{C27DF4FC-FE5D-4517-8ECA-29C8F7CF4EE3}"
+EndProject
+>>>>>>> 9f0b4938a3dd091a5acf559c933e58839cc23d7a
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,14 +53,28 @@ Global
 		{C015C28B-CADD-4E82-8538-193E517E8CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C015C28B-CADD-4E82-8538-193E517E8CB4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{C015C28B-CADD-4E82-8538-193E517E8CB4}.Release|Any CPU.Build.0 = Debug|Any CPU
+<<<<<<< HEAD
 		{6BF17233-BF1D-4BEF-AE1B-7FAAF4940CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6BF17233-BF1D-4BEF-AE1B-7FAAF4940CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BF17233-BF1D-4BEF-AE1B-7FAAF4940CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BF17233-BF1D-4BEF-AE1B-7FAAF4940CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> 9f0b4938a3dd091a5acf559c933e58839cc23d7a
 		{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BA5B285-0199-4092-A6AE-8F36A2A08BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
+=======
+		{3794A033-55BE-489A-8BBC-97715EAA4AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3794A033-55BE-489A-8BBC-97715EAA4AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3794A033-55BE-489A-8BBC-97715EAA4AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3794A033-55BE-489A-8BBC-97715EAA4AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27DF4FC-FE5D-4517-8ECA-29C8F7CF4EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27DF4FC-FE5D-4517-8ECA-29C8F7CF4EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27DF4FC-FE5D-4517-8ECA-29C8F7CF4EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27DF4FC-FE5D-4517-8ECA-29C8F7CF4EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> 9f0b4938a3dd091a5acf559c933e58839cc23d7a
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
